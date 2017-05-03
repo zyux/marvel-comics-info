@@ -2,7 +2,7 @@
     <ion-content class="padding">
 	{{ comics }}
         <div class="list">
-            <a ng-href="#/comics/{{ comic.id }}" class="item" ng-repeat="comic in comics.data.results">
+            <a ng-href="#/comics/{{ comic.id }}" class="item" ng-repeat="comic in comics.comics.data.results">
                 {{ comic.title }}
             </a>
         </div>

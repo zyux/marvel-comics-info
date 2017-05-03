@@ -1,26 +1,18 @@
-angular.module('starter.services', [])
+angular
+    .module('comicsApp')
+    .factory('Comics', function($http) {
+        var dataSource = 'http://samcroft.co.uk/comics-app/comics?callback=JSON_CALLBACK';
 
-/**
- * A simple example service that returns some data.
- */
-.factory('Friends', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
-  ];
-
-  return {
-    all: function() {
-      return friends;
-    },
-    get: function(friendId) {
-      // Simple index lookup
-      return friends[friendId];
-    }
-  }
-});
+        return {
+            getComics: function() {
+                return $http.jsonp(dataSource);
+            },
+            getComic: function(comicId) {
+                return $http.jsonp(dataSource, {
+                    params: {
+                        id: comicId
+                    }
+                });
+            }
+        }
+    });

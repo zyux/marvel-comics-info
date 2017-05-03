@@ -1,15 +1,35 @@
-angular.module('starter.controllers', [])
+angular
+    .module('comicsApp')
+    .controller('ComicsController', function(Comics, $scope, $ionicLoading) {
+        var _this = this;
 
-.controller('DashCtrl', function($scope) {
-})
+        $scope.$on('$ionicView.enter', function(){
+            $ionicLoading.show();
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
+            Comics.getComics().then(function(response){
+                _this.comics = response.data;
+            }).catch(function(response){
+                //request was not successful
+                //handle the error
+            }).finally(function(){
+                $ionicLoading.hide();
+            });
+        });
+    })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
+    .controller('ComicDetailController', function(Comics, $stateParams, $scope, $ionicLoading) {
+        var _this = this;
+        
+        $scope.$on('$ionicView.enter', function(){
+            $ionicLoading.show();
 
-.controller('AccountCtrl', function($scope) {
-});
+            Comics.getComic($stateParams.comicId).then(function(response){
+                _this.comic = response.data;
+            }).catch(function(response){
+                //request was not successful
+                //handle the error
+            }).finally(function(){
+                $ionicLoading.hide();
+            });
+        });
+    });

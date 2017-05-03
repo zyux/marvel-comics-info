@@ -1,7 +1,7 @@
 angular
     .module('comicsApp')
     .factory('Comics', function($http) {
-        var dataSource = 'http://samcroft.co.uk/comics-app/comics?callback=JSON_CALLBACK';
+        var dataSource = 'https://gateway.marvel.com:443/v1/public/comics?apikey=b8d2fb8a8ff841284c45cd7250fb6f57';
 
         return {
             getComics: function() {

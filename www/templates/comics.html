@@ -13,17 +13,17 @@
 	</div>
 	<div class="comics">
 		<h2 ng-if="comics.comics.data.total==0"> No se encontraron comics </h2>
-		<div class="list">
-		    <a ng-href="#/comics/{{ comic.id }}" class="item" ng-repeat="comic in comics.comics.data.results">
+		<div class="list ">
+		    <a ng-href="#/comics/{{ comic.id }}" class="item ellipsis" ng-repeat="comic in comics.comics.data.results">
 			<div class="comic-thumbnail" style="float: left">
 				<ion-thumbnail>
 					<img src="{{ comic.thumbnail.path }}/portrait_small.{{ comic.thumbnail.extension }}">
 				</ion-thumbnail>
 			</div>
 
-			<div class="comic-info" style="float: left;">
-				<p>   Titulo: {{ comic.title }} </p>
-				<p>   Formato: {{ comic.format }} </p>
+			<div class="comic-info ellipsis" style="float: left;">
+				<p class="ellipsis">   Titulo: {{ comic.title }} </p>
+				<p class="ellipsis">   Formato: {{ comic.format }} </p>
 			</div>
 
 

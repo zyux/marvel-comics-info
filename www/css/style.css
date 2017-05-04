@@ -34,6 +34,7 @@ ion-content{
   color: black;
   margin-left: 5px;
   margin-right:  5px;
+}
   
 }
 .item.activated{
@@ -42,11 +43,16 @@ ion-content{
   color: black;
   margin-left: 5px;
   margin-right:  5px;
-  
 }
 .item p{
   color: black;
 }
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 div.comic-info{
   margin: 5px;

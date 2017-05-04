@@ -15,7 +15,7 @@
 		<h2 ng-if="comics.comics.data.total==0"> No se encontraron comics </h2>
 		<div class="list">
 		    <a ng-href="#/comics/{{ comic.id }}" class="item" ng-repeat="comic in comics.comics.data.results">
-			<div class="comic-thumbnail" style="float: left; width: 10%;">
+			<div class="comic-thumbnail" style="float: left">
 				<ion-thumbnail>
 					<img src="{{ comic.thumbnail.path }}/portrait_small.{{ comic.thumbnail.extension }}">
 				</ion-thumbnail>

@@ -28,3 +28,62 @@ ion-content{
     background-size: 100%;
   
 }
+.item{
+  background-color: rgba(200,200,200,0.5);
+  border-color: rgb(200,200,200);
+  color: black;
+  margin-left: 5px;
+  margin-right:  5px;
+}
+.item p{
+  color: black;
+}
+
+div.comic-info{
+  margin: 5px;
+}
+div.comic-thumbnail{
+  margin: 5px
+}
+div.comic-content{
+  overflow: auto;
+  background-color: rgba(200,200,200,0.5);
+  border-radius: 5px;
+  border-color: rgb(200,200,200);
+}
+
+div.comic-search {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;}
+div.comic-search input{
+    float: left; 
+    margin-left: 5%;
+    width: 90%;
+    background-color: rgb(200,200,200);
+    border-radius: 4px;
+    color: black;
+    
+    
+}
+div.comic-search button{
+    float: left;
+    background-color: rgb(200,200,200);
+}
+
+div.comic-search ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgb(225,225,225);
+}
+div.comic-search :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgb(225,225,225);
+   opacity:  1;
+}
+div.comic-search ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgb(225,225,225);
+   opacity:  1;
+}
+div.comic-search :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    rgb(225,225,225);
+}
+
+

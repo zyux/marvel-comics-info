@@ -1,7 +1,6 @@
 {
-  "name": "Ionic Starter",
-  "description": "A simple Ionic app for Heroku",
-  "repository": "https://github.com/driftyco/ionic-heroku-button",
-  "logo": "http://ionicframework.com/img/ionic-logo-blog.png",
+  "name": "Marvel comics info",
+  "description": "A simple Ionic app, do of display info of marvel comics",
+  "repository": "https://github.com/zyux/marvel-comic-info",
   "keywords": ["ionic", "static"]
 }

@@ -28,7 +28,7 @@
 	<div class="comics">
 		<p> Comics relacionados: <div  ng-if="comicDetail.comic.data.results[0].availables==0"> No se encontraron comics </div> </p>
 		<div class="list">
-		    <a  class="item" ng-repeat="comic in comicDetail.comic.data.results[0].stories.items">
+		    <div  class="item" ng-repeat="comic in comicDetail.comic.data.results[0].stories.items">
 			<div class="comic-thumbnail" style="float: left; width: 10%;">
 				<ion-thumbnail>
 					<img src="{{ comic.thumbnail.path }}/portrait_small.{{ comic.thumbnail.extension }}">
@@ -41,7 +41,7 @@
 			</div>
 
 
-		    </a>
+		    </div>
 		</div>
         </div>
 

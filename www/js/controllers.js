@@ -1,6 +1,6 @@
 angular
     .module('comicsApp')
-    .controller('ComicsController', function(Comics, $stateParams, $scope, $ionicLoading) {
+    .controller('ComicsController', function(Comics, $stateParams, $scope, $ionicLoading,$ionicScrollDelegate) {
         var _this = this;
 
         $scope.$on('$ionicView.enter', function(){
@@ -13,6 +13,18 @@ angular
 	    }).finally(function(){
 		$ionicLoading.hide();
 	    });
+
+	  $scope.checkScroll = function () {
+
+		var currentTop = $ionicScrollDelegate.$getByHandle('scroller').getScrollPosition().top;
+		var maxTop = $ionicScrollDelegate.$getByHandle('scroller').getScrollView().__maxScrollTop;
+
+		if (currentTop >= maxTop)
+		{
+		    // hit the bottom
+		  alert('bottom of scroll!');
+		}
+	    };
 
         });
 

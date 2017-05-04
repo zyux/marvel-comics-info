@@ -2,12 +2,12 @@
     <ion-nav-title>{{ comicDetail.comic.data.results[0].title }}</ion-nav-title>
     <ion-content class="padding">
 	<div class="comic-content">
-		<div class="comic-thumbnail" style="float: left; width: 15%;">
+		<div class="comic-thumbnail" style="float: left;">
 			<ion-thumbnail>
 				<img src="{{ comicDetail.comic.data.results[0].thumbnail.path }}/portrait_xlarge.{{ comicDetail.comic.data.results[0].thumbnail.extension }}">
 			</ion-thumbnail>
 		</div>
-		<div class="comic-info" style="float: left; width: 85%;">
+		<div class="comic-info" style="float: left;">
 			<div>  Titulo: {{ comicDetail.comic.data.results[0].title }} </div>
 			<div>  Formato: {{ comicDetail.comic.data.results[0].format }} </div>
 			<div>  Paginas: {{ comicDetail.comic.data.results[0].pageCount}} </div>

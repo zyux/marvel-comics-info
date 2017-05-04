@@ -25,7 +25,7 @@ angular.module('comicsApp', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('comics', {
-            url: '/comics',
+            url: '/comics?title&startYear',
             templateUrl: 'templates/comics.html',
             controller: 'ComicsController',
             controllerAs: 'comics'
@@ -35,7 +35,8 @@ angular.module('comicsApp', ['ionic'])
             templateUrl: 'templates/comic-detail.html',
             controller: 'ComicDetailController',
             controllerAs: 'comicDetail'
-        });
+        })
+
         
     $urlRouterProvider.otherwise('/comics');
 });

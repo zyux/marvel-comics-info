@@ -1,0 +1,16 @@
+<ion-view>
+    <ion-nav-title>Marvel Comics info</ion-nav-title>
+    <ion-content class="padding">
+	<div class="landing-page">
+		<img class="page-logo" src="img/Marvel-logo.png" />
+		<div class="comic-search">
+		    <input type="text" placeholder="Search" ng-model="search">
+		    <button class="button ion-android-search input-button button-small"
+			      ng-click="comicSearch()" ng-show="search.length">
+            	    </button>
+
+  		</div>
+	</div>
+
+    </ion-content>
+</ion-view>

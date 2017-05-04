@@ -1,21 +1,34 @@
 angular
     .module('comicsApp')
-    .controller('ComicsController', function(Comics, $scope, $ionicLoading) {
+    .controller('ComicsController', function(Comics, $stateParams, $scope, $ionicLoading) {
         var _this = this;
 
         $scope.$on('$ionicView.enter', function(){
             $ionicLoading.show();
+	    Comics.getComics($stateParams).then(function(response){
+		_this.comics = response.data;
+	    }).catch(function(response){
+		//request was not successful
+		//handle the error
+	    }).finally(function(){
+		$ionicLoading.hide();
+	    });
 
-            Comics.getComics().then(function(response){
-                _this.comics = response.data;
-            }).catch(function(response){
-                //request was not successful
-                //handle the error
-            }).finally(function(){
-                $ionicLoading.hide();
-            });
         });
+
+	$scope.comicSearch=function(title,startYear){	
+            $ionicLoading.show();
+	    Comics.getComics({ title: title, startYear: startYear }).then(function(response){
+		_this.comics = response.data;
+	    }).catch(function(response){
+		//request was not successful
+		//handle the error
+	    }).finally(function(){
+		$ionicLoading.hide();
+	    });		
+	};
     })
+
 
     .controller('ComicDetailController', function(Comics, $stateParams, $scope, $ionicLoading) {
         var _this = this;
@@ -32,4 +45,41 @@ angular
                 $ionicLoading.hide();
             });
         });
-    });
+    })
+    .controller('ComicSearchController', function($scope){
+        $scope.comicSearch = function() {
+            alert('hello');
+        }
+    })
+    .controller('ComicByNameController', function(Comics, $stateParams, $scope, $ionicLoading) {
+        var _this = this;
+        
+        $scope.$on('$ionicView.enter', function(){
+            $ionicLoading.show();
+
+            Comics.getComicsByName($stateParams.comicId).then(function(response){
+                _this.comics = response.data;
+            }).catch(function(response){
+                //request was not successful
+                //handle the error
+            }).finally(function(){
+                $ionicLoading.hide();
+            });
+        });
+    })
+    .controller('ComicByYearController', function(Comics, $stateParams, $scope, $ionicLoading) {
+        var _this = this;
+        
+        $scope.$on('$ionicView.enter', function(){
+            $ionicLoading.show();
+
+            Comics.getComicsByYear($stateParams.comicId).then(function(response){
+                _this.comics = response.data;
+            }).catch(function(response){
+                //request was not successful
+                //handle the error
+            }).finally(function(){
+                $ionicLoading.hide();
+            });
+        });
+    })

@@ -1,10 +1,49 @@
 <ion-view>
-    <ion-nav-title>{{ comicDetail.comic.title }}</ion-nav-title>
+    <ion-nav-title>{{ comicDetail.comic.data.results[0].title }}</ion-nav-title>
     <ion-content class="padding">
-        <p>{{ comicDetail.comic.description }}</p>
+	<div class="comic-content">
+		<div class="comic-thumbnail" style="float: left; width: 15%;">
+			<ion-thumbnail>
+				<img src="{{ comicDetail.comic.data.results[0].thumbnail.path }}/portrait_xlarge.{{ comicDetail.comic.data.results[0].thumbnail.extension }}">
+			</ion-thumbnail>
+		</div>
+		<div class="comic-info" style="float: left; width: 85%;">
+			<div>  Titulo: {{ comicDetail.comic.data.results[0].title }} </div>
+			<div>  Formato: {{ comicDetail.comic.data.results[0].format }} </div>
+			<div>  Paginas: {{ comicDetail.comic.data.results[0].pageCount}} </div>
+			<div>  Serie: {{ comicDetail.comic.data.results[0].series.name}} </div>
+			<div>  Creadores: <div class="comic-creator" ng-repeat="creator in comicDetail.comic.data.results[0].creators.items"> {{creator.name}} </div>
+			</div>
+	</div>
+	<div class="comic-description">
+		<p>  Descripción: {{ comicDetail.comic.data.results[0].description }}  </p>
+	</div>	
+	<div class="comic-characters">
+		<p> Personajes: <div ng-if="comicDetail.comic.data.results[0].characters.available==0"> Informacion no disponible</div></p>
+		<div class="list">
+		    <div class="item" ng-repeat="character in comicDetail.comic.data.results[0].characters.items">{{ character.name }}</div>
+		</div>
+	</div>
 
-        <div class="list">
-            <div class="item" ng-repeat="character in comicDetail.comic.characters">{{ character }}</div>
+	<div class="comics">
+		<p> Comics relacionados: <div  ng-if="comicDetail.comic.data.results[0].availables==0"> No se encontraron comics </div> </p>
+		<div class="list">
+		    <a ng-href="#/comics/{{ comic.id }}" class="item" ng-repeat="comic in comicDetail.comic.data.results[0].stories.items">
+			<div class="comic-thumbnail" style="float: left; width: 10%;">
+				<ion-thumbnail>
+					<img src="{{ comic.thumbnail.path }}/portrait_small.{{ comic.thumbnail.extension }}">
+				</ion-thumbnail>
+			</div>
+
+			<div class="comic-info" style="float: left; width: 90%;">
+				<p>   Titulo: {{ comic.name }} </p>
+				<p>   Tipo: {{ comic.type }} </p>
+			</div>
+
+
+		    </a>
+		</div>
         </div>
+
     </ion-content>
 </ion-view>

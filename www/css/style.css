@@ -1,1 +1,30 @@
 /* Empty. Add your own CSS if you like */
+
+div.comic-search input{
+  margin: 2px;
+}
+div.comic-search button{
+  margin: 2px;
+}
+div.comics{
+  display: inline-block;
+  width: 100%
+}
+
+div.comic-characters{
+  display: inline-block;
+  width: 100%
+}
+div.comic-description{
+  display: inline-block;
+  width: 100%
+}
+
+div.comic-creator{
+  padding-left:3em
+}
+ion-content{
+    background-image: url("img/background3.png");
+    background-size: 100%;
+  
+}

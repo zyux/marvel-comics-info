@@ -1,1 +1,0 @@
-# marvel-comics-info

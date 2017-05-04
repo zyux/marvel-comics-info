@@ -69,7 +69,7 @@ div.comic-search input{
     float: left; 
     margin-left: 5%;
     width: 90%;
-    background-color: rgba(255,255,255,0.75);
+    background-color: rgba(225,225,225,0.75);
     border-radius: 4px;
     color: black;
     
@@ -77,7 +77,7 @@ div.comic-search input{
 }
 div.comic-search button{
     float: left;
-    background-color: rgba(200,200,200,0.5);
+    background-color: rgba(225,225,225,0.75);
 }
 
 div.comic-search ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -100,6 +100,7 @@ div.comic-description{
   color: black;
   margin-top:5px;
 }
+
 
 
 
